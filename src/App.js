@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import Card from './Components/Card'
 
 function App() {
-  const [counter, setCounter] = useState(15);
+  const [count, setCount] = useState(0)
 
-  const addValue = () => {
-    setCounter((prevCounter) => prevCounter +1);
-    setCounter((prevCounter) => prevCounter +1);
-    setCounter((prevCounter) => prevCounter +1);
-    setCounter((prevCounter) => prevCounter +1);
+  let myObj = {
+    name: 'Hitesh',
+    age: 25,
+    address: {
+      city: 'Jaipur',
+      state: 'Rajasthan',
+      country: 'India'
+    }
   }
-
-  const removeValue = () => {
-    setCounter(counter - 1);
-  }
+  let newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   return (
     <>
-      <h1>React course with covenant {counter}</h1>
-      <h2>course value: {counter}</h2>
-      <button onClick={addValue}>Add value</button>{" "}
-      <button onClick={removeValue}>Remove value</button>
-      <p>Footer: {counter}</p>
+      <h1 className='text-3xl bg-green-500 p-3 rounded-md' >Vite with Tailwind</h1>
+      <Card username="hitesh" myArr={newArr} />
+      <Card username='Json' post='Staff Engg.' />
+      <Card />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
